@@ -1,0 +1,117 @@
+Trunk Ports: switch to switch:
+TAAS/BABA:
+config t
+Int Range fa0/10-12
+ !shutdown
+ no shutdown
+ switchport trunk Encap Dot1Q
+ switchport mode trunk
+ do sh int trunk
+end
+
+kali ip
+
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:32:4b:38 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.101.138/24 brd 192.168.101.255 scope global dynamic noprefixroute eth0
+
+
+cd /home/kali/pentbox-1.8
+./pentbox.rb
+
+nmmap -v 192.168.101.138
+
+telnet 
+
+sudo su - enter
+msfconsole
+sudo systemctl status ssh
+root
+
+sudo systemctl status rsyslog
+sudo nano /etc/filebeat/filebeat.yml
+systemctl restart filebeat.service
+systemctl status filebeat.service
+sudo systemctl enable elasticsearch
+sudo systemctl start elasticsearch
+http://localhost:8200
+
+search ssh_login
+use 0
+show options
+set rhosts 208.8.8.133
+set user_file /home/kali/Desktop/username
+set user_file /home/kali/Desktop/password
+
+
+
+sudo dnf -y instlall fail2ban
+sudo systemctl enable -- now fail2ban
+fail2ban-client status sshd
+sudo nano /etc/fail2ban/jail.local
+
+enabled = true
+port = ssh
+logpath = /var/log/secure
+maxretry = 5
+bantime =300
+findtime = 60
+action = firewallcmd-allports
+
+sudo systemctl restart fail2ban
+fail2ban-client status sshd
+sudo fail2ban-client set sshd unbanip "attacker ip address"
+
+https://codeshare.io/Secplus
+
+sudo mkdir -p /mnt/hgfs/
+
+sudo vmhgfs-fuse .host:/exe-to-pdf /mnt/hgfs -o allow_other
+
+ls /mnt/hgfs/
+1mb.exe howt-to-reverse.txt msedge.exe reshacker_setup.exe
+
+
+RENAME: 1mb.exe >> high-level-complexe.pdf
+
+1mb.exe >> high-level-complex.pdf
+
+EMULATOR:
+cd /mnt/hgfs
+ls -lb
+files -- *
+
+DOWNLOAD:
+
+
+
+
+
+
+
+
+
+
+PYTHON:
+python -m venv venv
+cd Payment
+pip install PILLOW
+
+
+
+required library
+
+
+
+
+..\venv\Scripts\Activate.ps1
+
+python -m PyInstaller --onefile --windowed --name Payment --icon --add-data "QRC.jpg;." --add-data "alert.wav;." QR.py
+
+
+
+https://github.com/Gabi-comm/Rivan-OWASP
+
+
+
+
